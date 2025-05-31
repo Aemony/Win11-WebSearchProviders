@@ -16,7 +16,7 @@ Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for Eur
 
 ## Installation
 
-1. [Download](https://github.com/Aemony/Win11-WebSearchProviders/releases/latest) the `Win11-WebSearchProviders.zip` archive and extract it in a folder of your choice.
+1. [Download](https://github.com/Aemony/Win11-WebSearchProviders/releases/latest) `Win11-WebSearchProviders.zip` and extract it in a folder of your choice.
 
 2. Run `setup.bat` or `setup.ps1`. Either of these will prompt for elevated rights (needed to install the self-signed certificate) before installing the `_package.msix` archive.
 
