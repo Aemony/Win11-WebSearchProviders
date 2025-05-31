@@ -22,7 +22,7 @@ Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for Eur
 
 3. Once the app has been installed, type something in the Start Menu/Search in Windows and click on the `Google` or `DuckDuckGo` category on top.
 
- * You can also type `Google: test` or `DuckDuckGo: test` directly to search using the specified search engine.
+   * You can also type `Google: test` or `DuckDuckGo: test` directly to search using the specified search engine.
 
 4. Click a suggested search query to me taken directly to the search results of the selected search engine.
 
@@ -44,7 +44,7 @@ Right click on `Google` or `DuckDuckGo` in the start menu and click **Uninstall*
 
 * The Windows 11 API supports defining a custom protocol that can be used to open the search results in an application of the developer's choice. However interetingly enough, if *no* custom protocol is defined, then Windows 11 tries to use Edge (even if it is not installed) to open the results. Additionally, if the normal HTTP or HTTPS protocol is defined, nothing will work at all (or I guess it might open it in Edge, which I don't have installed). The only way to get Windows 11 to actually use the default web browser installed on the system is to use an invalid protocol that has not been registered on the system as this will force Windows to use the default web browser instead.
 
- * This is just annoying to deal with.
+   * This is just annoying to deal with.
 
 
 ## Repository overview
