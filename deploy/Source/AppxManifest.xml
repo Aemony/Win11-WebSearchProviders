@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:desktop6="http://schemas.microsoft.com/appx/manifest/desktop/windows10/6"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:wincap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap uap3 desktop desktop6 wincap rescap">
+
+  <Identity Name="Aemony.Experimental.Win11.WebSearchProviders" 
+            Version="1.0.0.0" 
+            Publisher="CN=DONOTTRUST.Aemony.Experimental, O=Aemony, C=Sweden"
+            ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>Web Search Providers for Windows 11</DisplayName>
+    <PublisherDisplayName>Aemony.Experimental</PublisherDisplayName>
+    <Logo>Square44x44Logo.png</Logo>
+    <Description>Adds alternate web search providers in Windows 11</Description>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.18362.0" MaxVersionTested="10.0.18362.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en" />
+  </Resources>
+
+  <Applications>
+    <Application Id="DuckDuckGo" Executable="DuckDuckGo/DuckDuckGo.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="DuckDuckGo"
+        Description="Windows 11 Web Search Provider for DuckDuckGo"
+        BackgroundColor="transparent"
+        Square44x44Logo="DuckDuckGo/Square44x44Logo.png"
+        Square150x150Logo="DuckDuckGo/Square150x150Logo.png">
+        <uap:SplashScreen Image="DuckDuckGo/Wide310x150Logo.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExtension">
+          <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="DuckDuckGo" Id="DuckDuckGo" PublicFolder="Public">
+            <uap3:Properties>
+              <Endpoint>https://search.aemony.workers.dev/?e=ddg</Endpoint>
+              <Protocol>Aemony.Experimental.Win11.WebSearchProviders.InvalidProtocol</Protocol>
+            </uap3:Properties>
+          </uap3:AppExtension>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+
+    <Application Id="Google" Executable="Google/Google.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="Google"
+        Description="Windows 11 Web Search Provider for Google"
+        BackgroundColor="transparent"
+        Square44x44Logo="Google/Square44x44Logo.png"
+        Square150x150Logo="Google/Square150x150Logo.png">
+        <uap:SplashScreen Image="Google/Wide310x150Logo.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExtension">
+          <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="Google" Id="Google" PublicFolder="Public">
+            <uap3:Properties>
+              <Endpoint>https://search.aemony.workers.dev/?e=goo</Endpoint>
+              <Protocol>Aemony.Experimental.Win11.WebSearchProviders.InvalidProtocol</Protocol>
+            </uap3:Properties>
+          </uap3:AppExtension>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+  
+</Package>
