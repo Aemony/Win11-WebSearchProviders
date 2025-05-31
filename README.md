@@ -27,6 +27,10 @@ Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for Eur
 
 4. Click a suggested search query to me taken directly to the search results of the selected search engine.
 
+5. Web search providers can be disabled through the Settings app, under *Privacy & security* -> *Search permissions* -> **Web search**.
+
+   * ![win11-settings-web_search](https://github.com/user-attachments/assets/c0960cd4-0e8e-4dd1-9fba-7419eb2c0f7a)
+
 
 ## Uninstall
 
