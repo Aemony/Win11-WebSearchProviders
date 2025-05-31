@@ -57,6 +57,8 @@ Right click on `Google` or `DuckDuckGo` in the start menu and click **Uninstall*
 * The Windows 11 API supports defining a custom protocol that can be used to open the search results in an application of the developer's choice. However interetingly enough, if *no* custom protocol is defined, then Windows 11 tries to use Edge (even if it is not installed) to open the results. Additionally, if the normal HTTP or HTTPS protocol is defined, nothing will work at all (or I guess it might open it in Edge, which I don't have installed). The only way to get Windows 11 to actually use the default web browser installed on the system is to use an invalid protocol that has not been registered on the system as this will force Windows to use the default web browser instead.
 
    * This is just annoying to deal with.
+ 
+* Windows 11's built-in search functions through the [Microsoft Bing](https://apps.microsoft.com/detail/9nzbf4gt040c) app (formerly the "Web Search from Microsoft Bing" app). However Microsoft only allows this app to be uninstalled on EU devices. Oh, and this app enforces Microsoft Edge so if you have that browser uninstalled (again only available on EU devices), you will not even be able to use its search results.
 
 
 ## Privacy policy
