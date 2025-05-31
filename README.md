@@ -1,4 +1,4 @@
-# WebSearchApp
+# Win11-WebSearchProviders
 
 Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices").
 
