@@ -1,6 +1,8 @@
 # Win11-WebSearchProviders
 
-Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices").
+Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices") as a proof of concept of the implementation of a third-party search engine.
+
+* Please be aware that this may not always be functioning due to the Cloudflare proxy worker it relies on may occasionally hit captcha blocks at the search engines, preventing results from appearing.
 
 *Note that link previews are currently not implemented.*
 
@@ -67,7 +69,7 @@ Right click on `Google` or `DuckDuckGo` in the start menu and click **Uninstall*
 
 ## Privacy policy
 
-As the solution is dependent on a Cloudflare worker acting as a proxy to facilitate communication between Windows 11 (Bing) and DuckDuckGo or Google, Cloudflare's worker is also collecting some diagnostics data from each connection made. This data is only retained for 3 days and only referenced if they are needed for troubleshooting purposes.
+As the solution is dependent on a Cloudflare worker acting as a proxy to facilitate communication between Windows 11 (Bing) and DuckDuckGo or Google, Cloudflare's worker may occasionally be enabled to collect some diagnostics data from each connection made. The worker logs are only enabled for development or troubleshooting purposes, and once collected is only retained for 3 days.
 
 
 ## License
