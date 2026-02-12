@@ -24,7 +24,7 @@ int APIENTRY wWinMain (_In_     HINSTANCE hInstance,
     sexi              = { };
     sexi.cbSize       = sizeof (SHELLEXECUTEINFOW);
     sexi.lpVerb       = L"OPEN";
-    sexi.lpFile       = L"https://www.duckduckgo.com/";
+    sexi.lpFile       = L"https://search.brave.com/";
     sexi.lpParameters = NULL;
     sexi.lpDirectory  = NULL;
     sexi.nShow        = SW_SHOWNORMAL;

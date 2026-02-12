@@ -11,13 +11,15 @@
 async function searchEngine(engine, query, query_decoded, locale, country, preview) {
   let webResults, webSuggest;
 
-  if (engine == 'goo')
-  {
+  if (engine == 'goo') {
     webResults = new URL('https://www.google.com/search');
     webSuggest = new URL('https://www.google.com/complete/search');
   } else if (engine == 'ddg') {
     webResults = new URL('https://duckduckgo.com/');
     webSuggest = new URL('https://duckduckgo.com/ac/');
+  } else if (engine == 'brv') {
+    webResults = new URL('https://search.brave.com/search');      // https://search.brave.com/search?q=test&source=web
+    webSuggest = new URL('https://search.brave.com/api/suggest'); // https://search.brave.com/api/suggest?q=test&rich=true&source=web&country=us
   }
 
   if (engine == 'goo')
@@ -46,6 +48,17 @@ async function searchEngine(engine, query, query_decoded, locale, country, previ
     webSuggest.searchParams.set('kl', locale); // wt-wt for No region
     webSuggest.searchParams.set('q', query);
     webSuggest.searchParams.set('type', 'list1');
+  } else if (engine == 'brv') {
+    webResults.searchParams.set('lang', locale);
+    webSuggest.searchParams.set('country', country);
+    webResults.searchParams.set('q', query);
+  //webResults.searchParams.set('source', 'web');
+
+  //webSuggest.searchParams.set('lang', locale); // Does not seems to be supported? Is seemingly based on the country (region)..
+    webSuggest.searchParams.set('country', country);
+    webSuggest.searchParams.set('q', query);
+    webSuggest.searchParams.set('rich', 'false');
+  //webSuggest.searchParams.set('source', 'web');
   }
 
   //console.log(webSuggest.toString());
