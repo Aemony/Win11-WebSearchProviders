@@ -1,6 +1,8 @@
 # Win11-WebSearchProviders
 
-Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices").
+Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices") as a proof of concept of the implementation of a third-party search engine.
+
+* Please be aware that this may not always be functioning due to the Cloudflare proxy worker it relies on may occasionally hit captcha blocks at the search engines, preventing results from appearing.
 
 *Note that link previews are currently not implemented.*
 
@@ -26,6 +28,10 @@ Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for Eur
    * You can also type `Google: test` or `DuckDuckGo: test` directly to search using the specified search engine.
 
 4. Click a suggested search query to me taken directly to the search results of the selected search engine.
+
+5. Web search providers can be disabled through the Settings app, under *Privacy & security* -> *Search permissions* -> **Web search**.
+
+   * ![win11-settings-web_search](https://github.com/user-attachments/assets/c0960cd4-0e8e-4dd1-9fba-7419eb2c0f7a)
 
 
 ## Uninstall
@@ -54,14 +60,16 @@ Right click on `Google` or `DuckDuckGo` in the start menu and click **Uninstall*
 
 * This whole feature sees no support or use anywhere, probably because Microsoft only added it to adhere to EU laws and so only allows the functionality to be used on EU devices. But this also means that no third-party search engine supports the functionality out-of-the-box (to my knowledge), requiring the use of a intermediate proxy to facilitate traffic between the two.
 
-* The Windows 11 API supports defining a custom protocol that can be used to open the search results in an application of the developer's choice. However interetingly enough, if *no* custom protocol is defined, then Windows 11 tries to use Edge (even if it is not installed) to open the results. Additionally, if the normal HTTP or HTTPS protocol is defined, nothing will work at all (or I guess it might open it in Edge, which I don't have installed). The only way to get Windows 11 to actually use the default web browser installed on the system is to use an invalid protocol that has not been registered on the system as this will force Windows to use the default web browser instead.
+* The Windows 11 API supports defining a custom protocol that can be used to open the search results in an application of the developer's choice. However interestingly enough, if *no* custom protocol is defined, then Windows 11 tries to use Edge (even if it is not installed) to open the results. Additionally, if the normal HTTP or HTTPS protocol is defined, nothing will work at all (or I guess it might open it in Edge, which I don't have installed). The only way to get Windows 11 to actually use the default web browser installed on the system is to use an invalid protocol that has not been registered on the system as this will force Windows to use the default web browser instead.
 
    * This is just annoying to deal with.
+ 
+* Windows 11's built-in search functions through the [Microsoft Bing](https://apps.microsoft.com/detail/9nzbf4gt040c) app (formerly the "Web Search from Microsoft Bing" app). However Microsoft only allows this app to be uninstalled on EU devices. Oh, and this app enforces Microsoft Edge so if you have that browser uninstalled (again only available on EU devices), you will not even be able to use its search results.
 
 
 ## Privacy policy
 
-As the solution is dependent on a Cloudflare worker acting as a proxy to facilitate communication between Windows 11 (Bing) and DuckDuckGo or Google, Cloudflare's worker is also collecting some diagnostics data from each connection made. This data is only retained for 3 days and only referenced if they are needed for troubleshooting purposes.
+As the solution is dependent on a Cloudflare worker acting as a proxy to facilitate communication between Windows 11 (Bing) and DuckDuckGo or Google, Cloudflare's worker may occasionally be enabled to collect some diagnostics data from each connection made. The worker logs are only enabled for development or troubleshooting purposes, and once collected is only retained for 3 days.
 
 
 ## License
