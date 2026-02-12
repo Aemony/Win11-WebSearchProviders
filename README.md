@@ -1,6 +1,6 @@
 # Win11-WebSearchProviders
 
-Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices") as a proof of concept of the implementation of a third-party search engine.
+Adds **Google**, **DuckDuckGo**, and **Brave Search** as web search providers in Windows 11 for European Economic Area (EEA) devices (aka "EU devices") as a proof of concept of the implementation of a third-party search engine.
 
 * Please be aware that this may not always be functioning due to the Cloudflare proxy worker it relies on may occasionally hit captcha blocks at the search engines, preventing results from appearing.
 
@@ -23,9 +23,9 @@ Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for Eur
 
 2. Run `setup.bat` or `setup.ps1`. Either of these will prompt for elevated rights (needed to install the self-signed certificate) before installing the `_package.msix` archive.
 
-3. Once the app has been installed, type something in the Start Menu/Search in Windows and click on the `Google` or `DuckDuckGo` category on top.
+3. Once the app has been installed, type something in the Start Menu/Search in Windows and click on the `Google`, `DuckDuckGo`, or `Brave Search` category on top.
 
-   * You can also type `Google: test` or `DuckDuckGo: test` directly to search using the specified search engine.
+   * You can also type `Google: test`, `DuckDuckGo: test`, or `Brave Search: test` directly to search using the specified search engine.
 
 4. Click a suggested search query to me taken directly to the search results of the selected search engine.
 
@@ -36,7 +36,7 @@ Adds **Google** and **DuckDuckGo** as web search providers in Windows 11 for Eur
 
 ## Uninstall
 
-Right click on `Google` or `DuckDuckGo` in the start menu and click **Uninstall**.
+Right click on `Google`, `DuckDuckGo`, or `Brave Search` in the start menu and click **Uninstall**.
 
 
 ## Repository overview
@@ -69,7 +69,7 @@ Right click on `Google` or `DuckDuckGo` in the start menu and click **Uninstall*
 
 ## Privacy policy
 
-As the solution is dependent on a Cloudflare worker acting as a proxy to facilitate communication between Windows 11 (Bing) and DuckDuckGo or Google, Cloudflare's worker may occasionally be enabled to collect some diagnostics data from each connection made. The worker logs are only enabled for development or troubleshooting purposes, and once collected is only retained for 3 days.
+As the solution is dependent on a Cloudflare worker acting as a proxy to facilitate communication between Windows 11 (Bing) and DuckDuckGo, Google, or Brave Search, Cloudflare's worker may occasionally be enabled to collect some diagnostics data from each connection made. The worker logs are only enabled for development or troubleshooting purposes, and once collected is only retained for 3 days.
 
 
 ## License

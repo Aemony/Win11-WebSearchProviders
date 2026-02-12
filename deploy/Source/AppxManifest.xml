@@ -73,18 +73,18 @@
       </Extensions>
     </Application>
 
-    <Application Id="Brave" Executable="Brave/Brave.exe" EntryPoint="Windows.FullTrustApplication">
+    <Application Id="BraveSearch" Executable="BraveSearch/BraveSearch.exe" EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
-        DisplayName="Brave"
-        Description="Windows 11 Web Search Provider for Brave"
+        DisplayName="Brave Search"
+        Description="Windows 11 Web Search Provider for Brave Search"
         BackgroundColor="transparent"
-        Square44x44Logo="Brave/Square44x44Logo.png"
-        Square150x150Logo="Brave/Square150x150Logo.png">
-        <uap:SplashScreen Image="Brave/Wide310x150Logo.png" />
+        Square44x44Logo="BraveSearch/Square44x44Logo.png"
+        Square150x150Logo="BraveSearch/Square150x150Logo.png">
+        <uap:SplashScreen Image="BraveSearch/Wide310x150Logo.png" />
       </uap:VisualElements>
       <Extensions>
         <uap3:Extension Category="windows.appExtension">
-          <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="Brave" Id="Brave" PublicFolder="Public">
+          <uap3:AppExtension Name="com.microsoft.windows.websearchprovider" DisplayName="Brave Search" Id="BraveSearch" PublicFolder="Public">
             <uap3:Properties>
               <Endpoint>https://search.aemony.workers.dev/?e=brv</Endpoint>
               <Protocol>Aemony.Experimental.Win11.WebSearchProviders.InvalidProtocol</Protocol>
